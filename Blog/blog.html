@@ -4,83 +4,129 @@
     <meta charset="UTF-8">
     <title>Blog - Mon Eportfolio</title>
     <link rel="stylesheet" href="Blog.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e7eee140d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="header">
-    <nav class="nav">
-        <div class="nav-logo">
-            <a href="#">
-                <img src="logo.png" alt="Logo">
-                <span>Mon Portfolio</span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" class="d-inline-block align-text-top" height="50">
+                <span class="text-white fw-bold ms-2">Mon Portfolio</span>
             </a>
-        </div>
-        <ul class="nav-list">
-            <li class="nav-item"><a href="../index.html">Accueil</a></li>
-            <li class="nav-item"><a href="../Education-Competence/education-competences.html">Education et Compétences</a></li>
-            <li class="nav-item"><a href="../Projet/projets.html">Projets</a></li>
-            <li class="nav-item nav-item-page"><a href="blog.html">Blog</a></li>
-            <li class="nav-item"><a href="../CV/cv.html">Mon CV</a></li>
-            <li class="nav-item nav-item-Contact"><a href="../Contact/contact.html">Contact</a></li>
-            <li class="nav-item nav-item-language">
-                <a href="#">Français</a>
-                <ul class="nav-sublist">
-                    <li><a href="#">Anglais</a></li>
-                    <li><a href="#">Espagnol</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../Education-Competence/education-competences.html">Education et Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../Projet/projets.html">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="blog.html">Blog</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Français
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Anglais</a></li>
+                            <li><a class="dropdown-item" href="#">Espagnol</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-        <div class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            </div>
         </div>
     </nav>
 </header>
-<main class="blog">
-    <h1 class="blog-title">Blog</h1>
-    <section class="blog-post">
-        <h2 class="post-title">Titre de l'article 1</h2>
-        <p class="post-summary">Résumé de l'article 1</p>
-        <a href="#" class="post-link">Lire la suite</a>
-    </section>
-    <section class="blog-post">
-        <h2 class="post-title">Titre de l'article 2</h2>
-        <p class="post-summary">Résumé de l'article 2</p>
-        <a href="#" class="post-link">Lire la suite</a>
-    </section>
-    <section class="blog-post">
-        <h2 class="post-title">Titre de l'article 3</h2>
-        <p class="post-summary">Résumé de l'article 3</p>
-        <a href="#" class="post-link">Lire la suite</a>
-    </section>
+
+
+<main class="blog container">
+    <h1 class="blog-title text-center mb-5">Blog</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <section class="blog-post card mb-4">
+                <div class="card-body">
+                    <h2 class="post-title card-title mb-3">Créer un système Linux personnalisé avec LFS</h2>
+                    <p class="post-summary card-text mb-4">Découvrez comment créer un système d'exploitation Linux personnalisé à partir de zéro,
+                        en utilisant le guide Linux From Scratch (LFS). L'article montre les avantages de créer un tel système et les différentes étapes de sa construction.</p>
+                    <a href="#" class="post-link btn btn-primary">Lire la suite</a>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section class="blog-post card mb-4">
+                <div class="card-body">
+                    <h2 class="post-title card-title mb-3">Ma Piscine 42 : expérience et conseils</h2>
+                    <p class="post-summary card-text mb-4">Découvrez mon expérience de la Piscine de l'école 42, un test de sélection intense de 4 semaines.
+                        Je partage mes impressions sur l'ambiance et la communauté de la Piscine, ainsi que des conseils pour réussir cette épreuve.</p>
+                    <a href="#" class="post-link btn btn-primary">Lire la suite</a>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section class="blog-post card mb-4">
+                <div class="card-body">
+                    <h2 class="post-title card-title mb-3">Apprendre le développement et le système à partir de zéro</h2>
+                    <p class="post-summary card-text mb-4">Découvrez des conseils pratiques pour apprendre le développement et le système à partir de zéro,
+                        en commençant par les bases et en utilisant des ressources telles que des cours en ligne, des livres et des projets pratiques.</p>
+                    <a href="#" class="post-link btn btn-primary">Lire la suite</a>
+                </div>
+            </section>
+        </div>
+    </div>
 </main>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-left">
-            <h3>A propos de moi</h3>
-            <p>Je m'appelle Paul Perigault. N'hésitez pas à me contacter pour discuter de projets ou d'opportunités professionnelles.</p>
-            <a href="../Contact/contact.html" class="button">Contactez-moi</a>
-        </div>
-        <div class="footer-right">
-            <h3>Me suivre</h3>
-            <ul class="footer-links">
-                <li><a href="https://github.com/paulperigault">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/paul-perigault/">LinkedIn</a></li>
-            </ul>
+
+
+<footer class="footer bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>A propos de moi</h3>
+                <p>Je m'appelle Paul Perigault. N'hésitez pas à me contacter pour discuter de projets ou d'opportunités professionnelles.</p>
+                <a href="../Contact/contact.html" class="btn btn-outline-light">Contactez-moi</a>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h3>Me suivre</h3>
+                </div>
+                <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                        <a href="https://github.com/paulpp78" class="btn btn-outline-light">
+                            <i class="fab fa-github"></i>
+                            <span class="ms-2 d-none d-lg-inline">GitHub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/paul-perigault-669723267/" class="btn btn-outline-light">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="ms-2 d-none d-lg-inline">LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2023 Paul Perigault - Tous droits réservés</p>
+    <div class="bg-dark py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 Paul Perigault - Tous droits réservés</p>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
-<script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const navList = document.querySelector(".nav-list");
 
-    navToggle.addEventListener("click", () => {
-        navList.classList.toggle("is-active");
-    });
-</script>
 </body>
 </html>
