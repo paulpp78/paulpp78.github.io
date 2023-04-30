@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Mon Eportfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="#">
+                <img src="logo.png" alt="Logo">
+                <span>Mon Portfolio</span>
+            </a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item nav-item-page"><a href="index.html">Accueil</a></li>
+            <li class="nav-item"><a href="../Education-Competence/education-competences.html">Education et Compétences</a></li>
+            <li class="nav-item"><a href="../Projet/projets.html">Projets</a></li>
+            <li class="nav-item"><a href="../Blog/blog.html">Blog</a></li>
+            <li class="nav-item"><a href="../CV/cv.html">Mon CV</a></li>
+            <li class="nav-item nav-item-Contact"><a href="../Contact/contact.html">Contact</a></li>
+            <li class="nav-item nav-item-language">
+                <a href="#">Français</a>
+                <ul class="nav-sublist">
+                    <li><a href="#">Anglais</a></li>
+                    <li><a href="#">Espagnol</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<main class="eportfolio">
+    <h1 class="title">Bienvenue sur Mon Eportfolio</h1>
+    <p class="description">Je suis Paul Perigault étudiant en BUT informatique à l'IUT Paris Rives de Seine passionné par les architectures cloud et adepte des méthodes agiles. Je vous emmène découvrir mon monde.</p>
+</main>
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>A propos de moi</h3>
+            <p>Je m'appelle Paul Perigault. N'hésitez pas à me contacter pour discuter de projets ou d'opportunités professionnelles.</p>
+            <a href="../Contact/contact.html" class="button">Contactez-moi</a>
+        </div>
+        <div class="footer-right">
+            <h3>Me suivre</h3>
+            <ul class="footer-links">
+                <li><a href="https://github.com/paulperigault">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/paul-perigault/">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Paul Perigault - Tous droits réservés</p>
+    </div>
+</footer>
+<script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    navToggle.addEventListener("click", () => {
+        navList.classList.toggle("is-active");
+    });
+</script>
+</body>
+</html>
