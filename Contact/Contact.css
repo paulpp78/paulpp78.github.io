@@ -79,7 +79,7 @@ p {
 }
 
 main {
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
 }
 
@@ -91,7 +91,7 @@ h1 {
 
 
 .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -148,6 +148,12 @@ h1 {
     font-size: 14px;
     margin: 0;
     color: #fff;
+}
+
+@media only screen and (max-width: 991px) {
+    .footer {
+        position: absolute;
+    }
 }
 
 
