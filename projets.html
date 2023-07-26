@@ -7,6 +7,89 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
+    <style>
+        /* Custom CSS for the projects and skills page */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e90ff;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for individual projects */
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h2 {
+            color: #007bff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: none; /* Hide project descriptions by default */
+        }
+
+        /* Popover styles for displaying project description on hover */
+        .popover {
+            max-width: 300px;
+        }
+
+        /* Custom styles for the popover arrow */
+        .popover .arrow {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 12px 12px;
+            border-color: transparent;
+        }
+
+        .popover .arrow::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-style: solid;
+            border-width: 0 12px 12px;
+            border-color: #f5f5f5 transparent;
+        }
+
+        /* Show project descriptions on hover */
+        .project:hover p {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +102,38 @@
     <p>Cette page présente mes projets et compétences.</p>
 
     <!-- Container for displaying projects -->
-    <div id="projects-container"></div>
+    <div class="row" id="projects-container"></div>
+
+    <!-- Section for displaying skills -->
+    <div class="row skills-container">
+        <div class="col-md-4">
+            <div class="project skill">
+                <h2>Programmation</h2>
+                <p>Langage C, Script Shell, C++, JAVA, Python, Algorithmie, SQL</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="project skill">
+                <h2>Système</h2>
+                <p>Système d'exploitation Unix, Linux, Windows, Virtualisation d'architecture VMWare, VirtualBox, Protocoles TCP/IP, HTTP, DNS, SSH</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="project skill">
+                <h2>Bases de données</h2>
+                <p>MySQL, Oracle, Access</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="project skill">
+                <h2>Outils</h2>
+                <p>Systemes, Git/GitHub, Nmap/WireShark/Ping, Suite office/trello, HTML/CSS, Vimscript</p>
+            </div>
+        </div>
+    </div>
 </main>
 
 <!-- Include a container for the footer content -->
@@ -52,14 +166,26 @@
             const projectsContainer = document.getElementById('projects-container');
             data.forEach(project => {
                 const projectElement = document.createElement('div');
+                projectElement.classList.add('col-md-6', 'col-lg-4', 'project'); // Apply project styling
                 projectElement.innerHTML = `
                         <h2>${project.name}</h2>
                         <p>${project.description}</p>
                         <p>Language: ${project.language}</p>
                         <a href="${project.html_url}" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
-                        <hr>
                     `;
                 projectsContainer.appendChild(projectElement);
+            });
+
+            // Add event listener to toggle projects list display on hover
+            const projectItems = document.querySelectorAll('.project');
+            projectItems.forEach(item => {
+                item.addEventListener('mouseover', () => {
+                    item.classList.add('active');
+                });
+
+                item.addEventListener('mouseout', () => {
+                    item.classList.remove('active');
+                });
             });
         })
         .catch(error => console.error('Erreur lors de la récupération des projets :', error));

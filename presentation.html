@@ -7,6 +7,93 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
+    <style>
+        /* Custom CSS for the presentation page */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #c16328;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #c16328;
+            color: #fff;
+            border-radius: 5px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff6300;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: block;
+            background-color: #c16328;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .animated-text {
+            font-size: 2rem;
+            font-weight: bold;
+            animation: fadeInOut 3s ease infinite;
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animated-profile {
+            animation: scaleAnimation 3s ease infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,10 +102,12 @@
 
 <main class="container">
     <!-- Content for your presentation page goes here -->
-    <h1>Présentation</h1>
-    <p>Bienvenue sur mon ePortfolio ! Je suis [VotreNom], un développeur passionné par les technologies web et la création d'applications web.</p>
-    <p>Ici, vous trouverez des informations sur mon parcours professionnel, mes projets réalisés et mes compétences techniques.</p>
-    <p>N'hésitez pas à explorer mon portfolio et à me contacter si vous avez des questions ou des opportunités de collaboration.</p>
+    <img src="Logo.svg" alt="Profile Image" class="profile-image animated-profile">
+    <h1 class="animated-text">Présentation</h1>
+    <p class="animated-text">Bienvenue sur mon ePortfolio ! Je suis Paul, un étudiant en BUT informatique en alternance chez Wevii dans le domaine du Cloud.</p>
+    <p class="animated-text">Ici, vous trouverez des informations sur mon parcours professionnel, mes projets réalisés et mes compétences techniques.</p>
+    <p class="animated-text">N'hésitez pas à explorer mon portfolio et à me contacter si vous avez des questions ou des opportunités de collaboration.</p>
+    <a href="presentation.html" class="btn animated-text">En savoir plus sur moi</a>
 </main>
 
 <!-- Include a container for the footer content -->
