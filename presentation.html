@@ -1,0 +1,47 @@
+<!-- presentation.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Link to Bootstrap CSS (local) -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
+</head>
+
+<body>
+<!-- Include a container for the navbar content -->
+<div id="navbar-container"></div>
+
+<main class="container">
+    <!-- Content for your presentation page goes here -->
+    <h1>Présentation</h1>
+    <p>Bienvenue sur mon ePortfolio ! Je suis [VotreNom], un développeur passionné par les technologies web et la création d'applications web.</p>
+    <p>Ici, vous trouverez des informations sur mon parcours professionnel, mes projets réalisés et mes compétences techniques.</p>
+    <p>N'hésitez pas à explorer mon portfolio et à me contacter si vous avez des questions ou des opportunités de collaboration.</p>
+</main>
+
+<!-- Include a container for the footer content -->
+<div id="footer-container"></div>
+
+<!-- Link to Bootstrap JavaScript (local) -->
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script>
+    // Function to include external HTML files using fetch and innerHTML
+    function includeHTML(file, containerId) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(containerId).innerHTML = data;
+            });
+    }
+
+    // Include the navbar content
+    includeHTML('./navbar.html', 'navbar-container');
+
+    // Include the footer content
+    includeHTML('./footer.html', 'footer-container');
+</script>
+</body>
+
+</html>

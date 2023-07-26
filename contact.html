@@ -1,0 +1,65 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Link to Bootstrap CSS (local) -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
+</head>
+
+<body>
+<!-- Include a container for the navbar content -->
+<div id="navbar-container"></div>
+
+<main class="container">
+    <!-- Content for your contact page goes here -->
+    <h1>Contact</h1>
+    <p>Vous pouvez me contacter en utilisant le formulaire ci-dessous.</p>
+
+    <!-- Contact form -->
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Adresse e-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+
+    <!-- Link to download your CV (replace "cv.pdf" with your CV file name) -->
+    <p><a href="Cv.pdf" download>Télécharger mon CV</a></p>
+</main>
+
+<!-- Include a container for the footer content -->
+<div id="footer-container"></div>
+
+<!-- Link to Bootstrap JavaScript (local) -->
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script>
+    // Function to include external HTML files using fetch and innerHTML
+    function includeHTML(file, containerId) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(containerId).innerHTML = data;
+            });
+    }
+
+    // Include the navbar content
+    includeHTML('./navbar.html', 'navbar-container');
+
+    // Include the footer content
+    includeHTML('./footer.html', 'footer-container');
+</script>
+</body>
+
+</html>
