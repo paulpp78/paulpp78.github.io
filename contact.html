@@ -1,6 +1,5 @@
-<!-- contact.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- Link to Bootstrap CSS (local) -->
@@ -22,7 +21,7 @@
         }
 
         h1 {
-            color: #1e90ff;
+            color: #ff6300;
             font-size: 3rem;
             margin-bottom: 30px;
         }
@@ -62,7 +61,7 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #1e90ff;
+            border-color: #ff6300;
         }
 
         .form-message {
@@ -79,14 +78,14 @@
             text-decoration: none;
             margin-top: 30px;
             display: inline-block;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .btn:hover {
             background-color: #ff6300;
-            transform: translateY(-3px);
+            transform: scale(1.05);
         }
-
 
         .cv-link {
             font-size: 1.1rem;
@@ -99,7 +98,7 @@
             align-items: center;
             text-decoration: none;
             color: #333;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
         }
 
         .cv-link a svg {
@@ -107,7 +106,7 @@
         }
 
         .cv-link a:hover {
-            transform: translateY(-3px);
+            transform: scale(1.1);
         }
 
     </style>
@@ -123,7 +122,7 @@
     <p>Vous pouvez me contacter en utilisant le formulaire ci-dessous.</p>
 
     <!-- Contact form -->
-    <form class="contact-form">
+    <form class="contact-form" id="contact-form" onsubmit="sendEmail(event)">
         <div class="form-group">
             <label for="name" class="form-label">Nom</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -139,13 +138,14 @@
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
 
+
     <!-- Link to download your CV (replace "cv.pdf" with your CV file name) -->
     <p class="cv-link">
         <a href="Cv.pdf" download>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
             </svg>
-            TÃ©lÃ©charger mon CV
+            Télécharger mon CV
         </a>
     </p>
 </main>
@@ -163,6 +163,28 @@
             .then(data => {
                 document.getElementById(containerId).innerHTML = data;
             });
+    }
+
+    function sendEmail(event) {
+        event.preventDefault();
+
+        // Récupérer les données du formulaire
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Composez l'e-mail ici avec les détails du formulaire
+        var emailBody = "Nom: " + name + "\n";
+        emailBody += "Email: " + email + "\n";
+        emailBody += "Message: " + message;
+
+        // Ouvrir le client de messagerie de l'utilisateur avec les détails préremplis
+        window.location.href = "mailto:perigault.paul@gmail.com?subject=Nouveau message de contact&body=" + encodeURIComponent(emailBody);
+
+        // Réinitialiser le formulaire après l'envoi
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
     }
 
     // Include the navbar content

@@ -1,10 +1,11 @@
-<!-- presentation.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- Link to Bootstrap CSS (local) -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to animate.css (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
     <style>
@@ -43,6 +44,7 @@
             margin-top: 30px;
             display: inline-block;
             transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow on hover */
         }
 
         .btn:hover {
@@ -58,24 +60,7 @@
             background-color: #c16328;
             padding: 5px;
             object-fit: cover;
-        }
-
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .animated-text {
-            font-size: 2rem;
-            font-weight: bold;
-            animation: fadeInOut 3s ease infinite;
+            animation: scaleAnimation 3s ease infinite;
         }
 
         @keyframes scaleAnimation {
@@ -83,17 +68,53 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
             100% {
                 transform: scale(1);
             }
         }
 
+        .animated-text {
+            font-size: 2rem;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .animated-profile {
             animation: scaleAnimation 3s ease infinite;
         }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: none; /* Hide skills list by default */
+            animation: fadeInOut 3s ease infinite;
+        }
+
+        .skill-category:hover .skills-list {
+            display: block;
+        }
+
+        .skill-category {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
     </style>
+    <title></title>
 </head>
 
 <body>
@@ -102,12 +123,18 @@
 
 <main class="container">
     <!-- Content for your presentation page goes here -->
-    <img src="Logo.svg" alt="Profile Image" class="profile-image animated-profile">
-    <h1 class="animated-text">PrÃ©sentation</h1>
-    <p class="animated-text">Bienvenue sur mon ePortfolio ! Je suis Paul, un Ã©tudiant en BUT informatique en alternance chez Wevii dans le domaine du Cloud.</p>
-    <p class="animated-text">Ici, vous trouverez des informations sur mon parcours professionnel, mes projets rÃ©alisÃ©s et mes compÃ©tences techniques.</p>
-    <p class="animated-text">N'hÃ©sitez pas Ã  explorer mon portfolio et Ã  me contacter si vous avez des questions ou des opportunitÃ©s de collaboration.</p>
-    <a href="presentation.html" class="btn animated-text">En savoir plus sur moi</a>
+    <div class="row justify-content-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-md-8">
+            <img src="Logo.svg" alt="Profile Image" class="profile-image animated-profile">
+            <h1 class="animated-text">Présentation</h1>
+            <p class="animated-text">Bienvenue sur mon ePortfolio ! Je suis Paul, un étudiant en BUT informatique en alternance chez Wevii dans le domaine du Cloud.</p>
+            <p class="animated-text">Ici, vous trouverez des informations sur mon parcours professionnel, mes projets réalisés et mes compétences techniques.</p>
+            <p class="animated-text">N'hésitez pas à explorer mon portfolio et à me contacter si vous avez des questions ou des opportunités de collaboration.</p>
+            <a href="projets.html" class="btn btn-lg btn-primary btn-animated">
+                <i class="bi bi-chevron-right"></i> En savoir plus sur moi
+            </a>
+        </div>
+    </div>
 </main>
 
 <!-- Include a container for the footer content -->
@@ -124,10 +151,8 @@
                 document.getElementById(containerId).innerHTML = data;
             });
     }
-
     // Include the navbar content
     includeHTML('./navbar.html', 'navbar-container');
-
     // Include the footer content
     includeHTML('./footer.html', 'footer-container');
 </script>

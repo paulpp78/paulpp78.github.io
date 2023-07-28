@@ -1,6 +1,5 @@
-<!-- projets.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- Link to Bootstrap CSS (local) -->
@@ -14,6 +13,16 @@
             color: #333;
         }
 
+        /* Primary color */
+        .primary-color {
+            color: #c16328;
+        }
+
+        /* Secondary color */
+        .secondary-color {
+            color: #ff6300;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -22,7 +31,7 @@
         }
 
         h1 {
-            color: #1e90ff;
+            color: #c16328;
             font-size: 3rem;
             margin-bottom: 30px;
         }
@@ -49,7 +58,7 @@
         }
 
         .project h2 {
-            color: #007bff;
+            color: #ff6300;
             font-size: 2rem;
             margin-bottom: 10px;
         }
@@ -89,6 +98,21 @@
         .project:hover p {
             display: block;
         }
+
+        /* Custom button styles */
+        .btn-custom {
+            background-color: #c16328;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #ff6300;
+        }
     </style>
 </head>
 
@@ -98,39 +122,48 @@
 
 <main class="container">
     <!-- Content for your projects and skills page goes here -->
-    <h1>Projets et CompÃ©tences</h1>
-    <p>Cette page prÃ©sente mes projets et compÃ©tences.</p>
-
-    <!-- Container for displaying projects -->
-    <div class="row" id="projects-container"></div>
-
-    <!-- Section for displaying skills -->
-    <div class="row skills-container">
-        <div class="col-md-4">
-            <div class="project skill">
-                <h2>Programmation</h2>
-                <p>Langage C, Script Shell, C++, JAVA, Python, Algorithmie, SQL</p>
-            </div>
+    <div class="row mb-5">
+        <div class="col">
+            <h1 class="display-4 text-center primary-color">Projets</h1>
+            <p class="lead text-center">Voici mes projets présents sur GitHub.</p>
+            <!-- Section for displaying projects -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projects-container"></div>
         </div>
+    </div>
 
-        <div class="col-md-4">
-            <div class="project skill">
-                <h2>SystÃ¨me</h2>
-                <p>SystÃ¨me d'exploitation Unix, Linux, Windows, Virtualisation d'architecture VMWare, VirtualBox, Protocoles TCP/IP, HTTP, DNS, SSH</p>
-            </div>
-        </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="display-4 text-center primary-color">Compétences</h1>
+            <p class="lead text-center">Voici mes compétences acquises.</p>
+            <!-- Section for displaying skills -->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                        <h2 class="secondary-color">Programmation</h2>
+                        <p>Langage C, Script Shell, C++, JAVA, Python, Algorithmie, SQL</p>
+                    </div>
+                </div>
 
-        <div class="col-md-4">
-            <div class="project skill">
-                <h2>Bases de donnÃ©es</h2>
-                <p>MySQL, Oracle, Access</p>
-            </div>
-        </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                        <h2 class="secondary-color">Système</h2>
+                        <p>Système d'exploitation Unix, Linux, Windows, Virtualisation d'architecture VMWare, VirtualBox, Protocoles TCP/IP, HTTP, DNS, SSH</p>
+                    </div>
+                </div>
 
-        <div class="col-md-4">
-            <div class="project skill">
-                <h2>Outils</h2>
-                <p>Systemes, Git/GitHub, Nmap/WireShark/Ping, Suite office/trello, HTML/CSS, Vimscript</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                        <h2 class="secondary-color">Bases de données</h2>
+                        <p>MySQL, Oracle, Access</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                        <h2 class="secondary-color">Outils</h2>
+                        <p>Systemes, Git/GitHub, Nmap/WireShark/Ping, Suite office/trello, HTML/CSS, Vimscript</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -166,29 +199,19 @@
             const projectsContainer = document.getElementById('projects-container');
             data.forEach(project => {
                 const projectElement = document.createElement('div');
-                projectElement.classList.add('col-md-6', 'col-lg-4', 'project'); // Apply project styling
+                projectElement.classList.add('col');
                 projectElement.innerHTML = `
-                        <h2>${project.name}</h2>
-                        <p>${project.description}</p>
-                        <p>Language: ${project.language}</p>
-                        <a href="${project.html_url}" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                        <div class="project shadow p-3 mb-4 bg-white rounded">
+                            <h2 class="secondary-color">${project.name}</h2>
+                            <p>${project.description}</p>
+                            <p>Language: ${project.language}</p>
+                            <a href="${project.html_url}" target="_blank" rel="noopener noreferrer" class="btn btn-custom">Voir sur GitHub</a>
+                        </div>
                     `;
                 projectsContainer.appendChild(projectElement);
             });
-
-            // Add event listener to toggle projects list display on hover
-            const projectItems = document.querySelectorAll('.project');
-            projectItems.forEach(item => {
-                item.addEventListener('mouseover', () => {
-                    item.classList.add('active');
-                });
-
-                item.addEventListener('mouseout', () => {
-                    item.classList.remove('active');
-                });
-            });
         })
-        .catch(error => console.error('Erreur lors de la rÃ©cupÃ©ration des projets :', error));
+        .catch(error => console.error('Erreur lors de la récupération des projets :', error));
 </script>
 </body>
 
