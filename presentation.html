@@ -5,7 +5,8 @@
     <!-- Link to Bootstrap CSS (local) -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- Link to animate.css (CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Mon epo</title>
 
     <!-- Include your head section here (e.g., meta tags, title, stylesheets, etc.) -->
     <style>
@@ -113,8 +114,211 @@
         .skill-category:hover {
             transform: translateY(-5px);
         }
+        /* Custom CSS for the projects and skills page */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Primary color */
+        .primary-color {
+            color: #c16328;
+        }
+
+        /* Secondary color */
+        .secondary-color {
+            color: #ff6300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #c16328;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for individual projects */
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h2 {
+            color: #ff6300;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: none; /* Hide project descriptions by default */
+        }
+
+        /* Popover styles for displaying project description on hover */
+        .popover {
+            max-width: 300px;
+        }
+
+        /* Custom styles for the popover arrow */
+        .popover .arrow {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 12px 12px;
+            border-color: transparent;
+        }
+
+        .popover .arrow::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-style: solid;
+            border-width: 0 12px 12px;
+            border-color: #f5f5f5 transparent;
+        }
+
+        /* Show project descriptions on hover */
+        .project:hover p {
+            display: block;
+        }
+
+        /* Custom button styles */
+        .btn-custom {
+            background-color: #c16328;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #ff6300;
+        }
+
+        /* Style for the dropdown button */
+        .dropdown-btn {
+            background-color: #c16328;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Make the button full width */
+            margin-bottom: 10px; /* Add some margin between buttons */
+            position: relative; /* Add position relative to the dropdown button */
+        }
+
+        .dropdown-btn:hover {
+            background-color: #ff6300;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10; /* Set a higher z-index to bring the dropdown content to the front */
+            text-align: left; /* Align the content to the left */
+            padding: 10px; /* Add some padding to the dropdown content */
+            font-size: 1.2rem; /* Increase the font size */
+            top: 100%; /* Adjust the top position to move the dropdown above the buttons */
+            left: 0; /* Align the dropdown with the left edge of the button */
+        }
+
+        .dropdown-content p {
+            margin-bottom: 10px; /* Add some margin between skill items */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Custom styles for icons */
+        .fa {
+            margin-right: 10px; /* Add some spacing between icons and text */
+        }
+
+        .skill-item {
+            margin-bottom: 10px; /* Add some margin between skill items */
+        }
+
+        .timeline {
+        position: relative;
+        padding-left: 30px; /* Espacement à gauche de la ligne */
+    }
+    
+    .timeline-circle {
+        position: absolute;
+        left: 10px; /* Position horizontale du cercle */
+        top: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #007bff; /* Couleur du cercle */
+    }
+    
+    .timeline-content {
+        margin-left: 30px; /* Espacement du contenu par rapport à la ligne */
+        padding-bottom: 20px; /* Espacement entre les éléments */
+    }
+    
+    .timeline li {
+        position: relative;
+    }
+    
+    .timeline li:not(:last-child):after {
+        content: '';
+        position: absolute;
+        left: 12px; /* Position horizontale de la ligne */
+        top: 6px; /* Position verticale de la ligne */
+        height: calc(100% - 6px);
+        width: 2px;
+        background-color: #007bff; /* Couleur de la ligne */
+    }
+
     </style>
-    <title></title>
+
+
 </head>
 
 <body>
@@ -122,26 +326,188 @@
 <div id="navbar-container"></div>
 
 <main class="container">
-    <!-- Content for your presentation page goes here -->
+
+<section>
     <div class="row justify-content-center mb-5 animate__animated animate__fadeIn">
         <div class="col-md-8">
-            <img src="Logo.svg" alt="Profile Image" class="profile-image animated-profile">
-            <h1 class="animated-text">Pr�sentation</h1>
-            <p class="animated-text">Bienvenue sur mon ePortfolio ! Je suis Paul, un �tudiant en BUT informatique en alternance chez Wevii dans le domaine du Cloud.</p>
-            <p class="animated-text">Ici, vous trouverez des informations sur mon parcours professionnel, mes projets r�alis�s et mes comp�tences techniques.</p>
-            <p class="animated-text">N'h�sitez pas � explorer mon portfolio et � me contacter si vous avez des questions ou des opportunit�s de collaboration.</p>
-            <a href="projets.html" class="btn btn-lg btn-primary btn-animated">
-                <i class="bi bi-chevron-right"></i> En savoir plus sur moi
-            </a>
+        <img src="Logo.svg" alt="Profile Image" class="profile-image animated-profile">
+        <h1 class="animated-text">Présentation</h1>
+        <p class="animated-text">Bienvenue sur mon ePortfolio ! Je suis Paul, un étudiant en BUT informatique en alternance chez Wevii dans le domaine du Cloud.</p>
+        <p class="animated-text">Ici, vous trouverez des informations sur mon parcours professionnel, mes projets réalisés et mes compétences techniques.</p>
+        <p class="animated-text">N'hésitez pas à explorer mon portfolio et à me contacter si vous avez des questions ou des opportunités de collaboration.</p>
+        <a href="projets.html" class="btn btn-lg btn-primary btn-animated">
+            <i class="bi bi-chevron-right"></i> En savoir plus sur moi
+        </a>
+    </div>
+</div>
+</section>
+
+
+
+    <section>
+        <div class="row mb-5">
+            <div class="col">
+                <h1 class="display-4 text-center primary-color">Projets</h1>
+                <p class="lead text-center">Voici mes projets présents sur GitHub.</p>
+                <!-- Section for displaying projects -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projects-container"></div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center primary-color">Compétences</h1>
+                <p class="lead text-center">Voici mes compétences acquises.</p>
+                <!-- Section for displaying skills -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                            <div class="dropdown">
+                                <button class="dropdown-btn"><i class="fa fa-code"></i> Programmation</button>
+                                <div class="dropdown-content">
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> Langage C
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> Script Shell
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> C++
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> JAVA
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> Python
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> Algorithmie
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-check-circle"></i> SQL
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                            <div class="dropdown">
+                                <button class="dropdown-btn"><i class="fa fa-cogs"></i> Systéme</button>
+                                <div class="dropdown-content">
+                                    <p class="skill-item">
+                                        <i class="fa fa-linux"></i> Systéme d'exploitation Unix, Linux, Windows
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-server"></i> Virtualisation d'architecture VMWare, VirtualBox
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-globe"></i> Protocoles TCP/IP, HTTP, DNS, SSH
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                            <div class="dropdown">
+                                <button class="dropdown-btn"><i class="fa fa-database"></i> Bases de données</button>
+                                <div class="dropdown-content">
+                                    <p class="skill-item">
+                                        <i class="fa fa-database"></i> MySQL
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-database"></i> Oracle
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-database"></i> Access
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project skill shadow p-3 mb-4 bg-white rounded">
+                            <div class="dropdown">
+                                <button class="dropdown-btn"><i class="fa fa-wrench"></i> Outils</button>
+                                <div class="dropdown-content">
+                                    <p class="skill-item">
+                                        <i class="fa fa-code-branch"></i> Git/GitHub
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-network-wired"></i> Nmap/WireShark/Ping
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-tasks"></i> Suite office/Trello
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-html5"></i> HTML/CSS
+                                    </p>
+                                    <p class="skill-item">
+                                        <i class="fa fa-keyboard"></i> Vimscript
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="mb-3">Formations</h3>
+                <ul class="timeline list-unstyled">
+                    <li>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-content">
+                            <h5>Wevii - Depuis 09.2023</h5>
+                            <p>Alternance Cloud</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-content">
+                            <h5>IUT Paris Rives de Seine - Depuis 09.2022</h5>
+                            <p>But informatique</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-content">
+                            <h5>4 semaines, Août 2022</h5>
+                            <p>Piscine école 42</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-content">
+                            <h5>Baccalauréat STI2D SIN</h5>
+                            <p>Lycée les Pierres Vives, Carrières/Seine </p>
+    
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    
         </div>
     </div>
-</main>
+</section>
 
+</main>
 <!-- Include a container for the footer content -->
 <div id="footer-container"></div>
 
 <!-- Link to Bootstrap JavaScript (local) -->
-<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-rZ4I../im2023-7-19()age/1pngTwku0t4QV/QlB4fD2sqdI2e9kcjXerBwuNU1g8kUzDlvdnU/" crossorigin="anonymous"></script>
 <script>
     // Function to include external HTML files using fetch and innerHTML
     function includeHTML(file, containerId) {
@@ -155,6 +521,56 @@
     includeHTML('./navbar.html', 'navbar-container');
     // Include the footer content
     includeHTML('./footer.html', 'footer-container');
+    const username = 'paulpp78'; // Replace with your GitHub username
+
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+        .then(response => response.json())
+        .then(data => {
+            const projectsContainer = document.getElementById('projects-container');
+            data.forEach(project => {
+                const projectElement = document.createElement('div');
+                projectElement.classList.add('col');
+                projectElement.innerHTML = `
+                        <div class="project shadow p-3 mb-4 bg-white rounded">
+                            <h2 class="secondary-color">${project.name}</h2>
+                            <p>${project.description}</p>
+                            <p>Language: ${project.language}</p>
+                            <a href="${project.html_url}" target="_blank" rel="noopener noreferrer" class="btn btn-custom">Voir sur GitHub</a>
+                        </div>
+                    `;
+                projectsContainer.appendChild(projectElement);
+            });
+        })
+        .catch(error => console.error('Erreur lors de la récupération des projets :', error));
+
+
+        // Add click event listeners to all dropdown buttons
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', () => toggleDropdown(btn));
+    });
+
+    // Close dropdown when clicking outside of it
+    window.addEventListener('click', event => {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.parentElement.contains(event.target)) {
+                dropdown.style.display = 'none';
+                dropdown.previousElementSibling.classList.remove('active');
+            }
+        });
+    });
+
+    // Function to handle the dropdown button click event
+    function toggleDropdown(dropdown) {
+        dropdown.classList.toggle('active');
+        const dropdownContent = dropdown.nextElementSibling;
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    }
 </script>
 </body>
 
