@@ -1,80 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.16.0/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-SzKUsCJx2Ud84AFsQTtCG+83F3jR3vn3i0VOw0n7KoDH2bjHSxypJCfUK9S5jRgH" crossorigin="anonymous" />
-    <style>
-        /* Personnaliser la couleur du texte de la navigation */
-        .navbar-dark .navbar-nav .nav-link {
-            color: #ffffff; /* Couleur du texte */
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.16.0/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-SzKUsCJx2Ud84AFsQTtCG+83F3jR3vn3i0VOw0n7KoDH2bjHSxypJCfUK9S5jRgH" crossorigin="anonymous" />
+        <style>
+            .navbar-dark .navbar-nav .nav-link {
+                color: #ffffff;
+            }
 
-        /* Personnaliser la couleur du texte au survol */
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: #ffcc00; /* Couleur du texte au survol */
-        }
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: #ffcc00;
+            }
 
-        /* Personnaliser la couleur de fond du bouton hamburger */
-        .navbar-dark .navbar-toggler {
-            border-color: #ffffff; /* Couleur de la bordure */
-        }
+            .navbar-dark .navbar-toggler {
+                border-color: #ffffff;
+            }
 
-        /* Personnaliser la couleur de fond du bouton hamburger au survol */
-        .navbar-dark .navbar-toggler:hover {
-            border-color: #ffcc00; /* Couleur de la bordure au survol */
-        }
+            .navbar-dark .navbar-toggler:hover {
+                border-color: #ffcc00;
+            }
 
-        /* Ajouter une ombre douce à la navigation bar */
-        .navbar {
-            box-shadow: 0 2px 4px rgba(10, 216, 171, 0.1);
-        }
+            .navbar {
+                box-shadow: 0 2px 4px rgba(10, 216, 171, 0.1);
+                margin-bottom: 20px;
+            }
 
-        /* Ajouter une marge inférieure à la navigation bar */
-        .navbar {
-            margin-bottom: 20px;
-        }
+            .navbar-brand img {
+                max-width: 60px;
+                margin-right: 10px;
+                vertical-align: middle;
+                border-radius: 50%;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s;
+                background-color: #c16328;
+            }
 
-        /* Modifier le style du logo SVG */
-        .navbar-brand img {
-            max-width: 40px; /* Définir la taille maximale du logo */
-            margin-right: 5px; /* Espacement entre le logo et le texte */
-            vertical-align: middle; /* Aligner le logo au centre vertical */
-        }
-    </style>
-</head>
+            .navbar-brand img:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="presentation.html">
-                <img src="Logo.svg" alt="Mon Logo" /> Mon ePortfolio
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="presentation.html">
-                            <i class="bi bi-house-door"></i> Présentation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projets.html">
-                            <i class="bi bi-file-earmark-text"></i> Projets et Compétences
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i class="bi bi-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="presentation.html"> <img src="/Image/Logo.svg" alt="Mon Logo" /> Mon ePortfolio </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#presentation"> <i class="bi bi-house-door"></i> Présentation </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projets"> <i class="bi bi-file-earmark-text"></i> Projets et Compétences </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"> <i class="bi bi-envelope"></i> Contact </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-rZ4I../im2023-7-19()age/1pngTwku0t4QV/QlB4fD2sqdI2e9kcjXerBwuNU1g8kUzDlvdnU/" crossorigin="anonymous"></script>
-</body>
+        </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-rZ4I../im2023-7-19()age/1pngTwku0t4QV/QlB4fD2sqdI2e9kcjXerBwuNU1g8kUzDlvdnU/" crossorigin="anonymous"></script>
+    </body>
 </html>
